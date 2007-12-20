@@ -1,0 +1,20 @@
+http://toshiba-phoenix-lcd.googlecode.com/
+
+
+Usage
+
+With toshlcd script installed
+    * `toshlcd <n>`, where <n> means a number between (inclusively) 0 and 7. 
+        For example : `toshlcd 0` will change the brightness to the minimum.
+    * `toshlcd inc`, increment by one the brightness.
+    * `toshlcd dec`, decrement by one the brightness.
+
+Without toshlcd script
+    * `echo <n> > /proc/toshlcd`, where <n> means a number 
+        between (inclusively) 0 and 7. For example : `echo 0 > /proc/toshlcd`
+        will change the brightness to the minumum.
+
+Query
+    * `cat /proc/toshlcd` will return the value of the brightness.
+    
+

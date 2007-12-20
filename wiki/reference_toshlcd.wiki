@@ -1,0 +1,62 @@
+#summary Reference page on how to install and use toshlcd
+#labels Featured,Phase-Deploy
+
+= Installation/Compilation - Load/Unload =
+
+=== Debian package (recommended) ===
+
+Install
+    * `aptitude install module-assistant`
+    * `dpkg -i toshlcd-source_<version>_i386.deb`
+    * `m-a update`
+    * `m-a prepare`
+    * `m-a auto-install toshlcd`
+
+Uninstall
+    * `aptitude remove toshlcd-modules-<uname -r>`
+    * `aptitude remove toshlcd-source`
+    * `m-a purge toshlcd --force`
+
+Load (manually)
+    * `modprobe toshlcd`
+    * _If `modprobe toshlcd` returns `FATAL: Module toshlcd not found.`, execute `depmod`._
+
+Unload (manually)
+    * `modprobe -r toshlcd`
+
+
+=== Manually ===
+
+Install
+    * Install kernel headers.
+    * `cd <toshlcd source directory>`
+    * `make`
+    * `make install`
+    * `make install-script` (Install toshlcd script, optional)
+
+Uninstall
+    * `cd <toshlcd source directory>`
+    * `make uninstall`
+
+Load
+    * `modprobe toshlcd` or `make load` (in your <src dir>)
+    * _If `modprobe toshlcd` returns `FATAL: Module toshlcd not found.`, execute `depmod`._
+
+Unload
+    * `modprobe -r toshlcd` or `make unload` (in your <src dir>)
+
+
+
+
+= Usage =
+
+With toshlcd script installed
+    * `toshlcd n`, where _n_ means a number between (inclusively) 0 and 7. For example : `toshlcd 0` will change the brightness to the minimum.
+    * `toshlcd inc`, increment by one the brightness.
+    * `toshlcd dec`, decrement by one the brightness.
+
+Without toshlcd script
+    * `echo n > /proc/toshlcd`, where _n_ is a number between (inclusively) 0 and 7. For example : `echo 0 > /proc/toshlcd` will change the brightness to the minumum.
+
+Query
+    * `cat /proc/toshlcd` will return the value of the brightness.

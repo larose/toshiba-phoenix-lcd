@@ -1,0 +1,17 @@
+
+Install
+    * Install kernel headers.
+    * `cd <toshlcd source directory>`
+    * `make`
+    * `make install`
+    * `make install-script` (Install toshlcd script, optional)
+
+Uninstall
+    * `make uninstall`
+
+Load
+    * `modprobe toshlcd` or `make load` (in your <src dir>)
+    * _If `modprobe toshlcd` returns `FATAL: Module toshlcd not found.`, execute `depmod`._
+
+Unload
+    * `modprobe -r toshlcd` or `make unload` (in your <src dir>)

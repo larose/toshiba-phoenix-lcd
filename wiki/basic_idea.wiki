@@ -1,0 +1,28 @@
+#summary This page contains the basic idea of the module.
+#labels Featured
+
+Toshlcd is a module to let you change _easily_ the brigtness of your Toshiba laptops. There  are two ways to install toshlcd. If you are on a Debian-based distro, I would recommend you to install the module via the Debian packages. Else, you can compile from source toshlcd and install it.
+
+
+Once toshlcd is installed you will have to execute `echo n > /proc/toshlcd` (where _n_ is a number between 0 and 7 (inclusively)), to change the lcd brightness. Or more easily, if you installed toshlcd script (which is automatically installed when using the Debian-based distro instructions), you will have to execute `toshlcd n`. Or to increment or decrement by one : `toshlcd inc` and `toschlcd dec`.
+
+
+
+== Debian-based distro (.deb) ==
+
+Advantages
+  * Configure your system to load the module at boot time.
+  * Install toshlcd script automatically.
+
+
+Instructions
+  * Download the latest `toshlcd-source_*_i386.deb`
+  * Follow the instruction [http://code.google.com/p/toshiba-phoenix-lcd/wiki/reference_toshlcd here].
+
+
+
+== Manually ==
+
+Instructions
+  * Download the latest `toshlcd-*.tar.gz`.
+  * Follow the instruction [http://code.google.com/p/toshiba-phoenix-lcd/wiki/reference_toshlcd here].

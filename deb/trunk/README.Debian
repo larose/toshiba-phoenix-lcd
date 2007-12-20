@@ -1,0 +1,29 @@
+toshlcd for Debian
+------------------
+
+Please see ./README for a description of the toshlcd software.
+
+The Debian toshlcd source package provides one package,
+
+ 1) toshlcd-source, which provides the source for the kernel modules
+
+The toshlcd-source package can be used in several ways,
+
+ - Using the make-kpkg(1) command provided by the kernel-package Debian
+   package. This will produce a corresponding toshlcd-modules package for
+   the Debian kernel-image package that you are using. This is "the Debian
+   way". See the "modules_image" section of the make-kpkg(1) man page.
+
+ - Changing to the /usr/src/modules/toshlcd/ directory and building as
+   the README file instructs using "make; make install". This will build
+   and install a module specific to the system you are building on and is
+   not under control of the packaging system.
+
+
+
+
+- This package install toshlcd script (in /usr/bin).
+- This package modify /etc/modules to load at boot time toshlcd.
+
+
+ -- Mathieu Larose <mathieu@mathieularose.com>  Thu, 03 Jan 2008 23:21:05 -0500
